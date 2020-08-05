@@ -6,7 +6,9 @@ def call() {
             stage('Test') {
                 steps {
                     script {
+
                         echo "Testing"
+                        createJiraTicket summary: "test me"
                     }
                 }
             }
