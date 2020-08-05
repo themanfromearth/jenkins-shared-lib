@@ -1,3 +1,7 @@
+#!/usr/bin/env groovy
+
+
+
 def deployApp(cluster, envVars, numInstances) {
 
     echo cluster
@@ -5,3 +9,6 @@ def deployApp(cluster, envVars, numInstances) {
     echo numInstances
 
 }
+
+
+return this
