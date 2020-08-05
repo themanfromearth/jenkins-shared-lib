@@ -11,6 +11,10 @@ def call(Map pipelineParams) {
                         echo pipelineParams.param
                         echo "Testing..."
                         createJiraTicket(summary: "test me")
+                        createJiraTicket([summary: "Summary", description: "Description",
+                                 team: "inventory-management", application: "stock-hold"]) {
+                            echo "i am insid of create jira issu"
+                        }
                         echo "Done"
                     }
                 }
