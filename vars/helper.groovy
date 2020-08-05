@@ -3,7 +3,7 @@
 def call(Map params) {
 
     echo params.cluster
-    echo params.envVars
     echo params.numInstances
+    echo params.envVars.NEW_RELIC_ENVIRONMENT
 
 }
