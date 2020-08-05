@@ -8,11 +8,20 @@ def call(Map pipelineParams) {
             stage('Test') {
                 steps {
                     script {
-                        echo pipelineParams.param
-                        echo pipelineParams.param2
-                        createJiraTicket([summary: "Summary", description: "Description",
-                                          team: "inventory-management", application: "stock-hold"]) {
-                            echo "i am insid of create jira issu"
+
+                        for (deployment in pipelineParams.deployments["dev"]) {
+
+                            def additionalEnvVars = deployment.envVars ?: []
+                            def initialEnvVars = [
+                                    CLUSTER               : "cluster",
+                                    SPRING_PROFILES_ACTIVE: "springProfileActive",
+                                    ENVIRONMENT           : "environment",
+                                    APPLICATION_NAME      : "appName",
+                                    SERVICE_NAME          : "serviceName",
+                                    NEW_RELIC_ENVIRONMENT : "environment"
+                            ]
+                            def envVars = initialEnvVars + additionalEnvVars
+                            helper.deployApp(cluster: "dev", envVars: envVars, numInstances: 2)
                         }
                     }
                 }

@@ -3,4 +3,5 @@
 def call(Map config, callback) {
     callback()
     echo config.summary
+
 }
