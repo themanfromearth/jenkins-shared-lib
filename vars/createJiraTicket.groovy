@@ -2,7 +2,7 @@
 
 
 class RcvGlobals {
-    static Map defaults = [application: null, description: "", project: 'TM']
+    static Map defaults = [application: null, description: "", project: 'TestMe']
 }
 
 def call(Map config) {

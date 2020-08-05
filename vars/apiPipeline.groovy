@@ -7,8 +7,9 @@ def call() {
                 steps {
                     script {
 
-                        echo "Testing"
+                        echo "Testing..."
                         createJiraTicket summary: "test me"
+                        echo "Done"
                     }
                 }
             }
