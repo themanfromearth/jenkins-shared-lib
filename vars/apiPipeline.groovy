@@ -9,10 +9,10 @@ def call(Map pipelineParams) {
                 steps {
                     script {
                         echo pipelineParams.param
-                        echo "Testing..."
+                        echo pipelineParams.param2
                         createJiraTicket(summary: "test me")
-                        createJiraTicket([summary: "Summary", description: "Description",
-                                 team: "inventory-management", application: "stock-hold"]) {
+                        createJiraTicket(summary: "Summary", description: "Description",
+                                 team: "inventory-management", application: "stock-hold") {
                             echo "i am insid of create jira issu"
                         }
                         echo "Done"
