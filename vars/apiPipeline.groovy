@@ -21,7 +21,7 @@ def call(Map pipelineParams) {
                                     NEW_RELIC_ENVIRONMENT : "environment"
                             ]
                             def envVars = initialEnvVars + additionalEnvVars
-                            helper.deployApp(cluster: "dev", envVars: envVars, numInstances: 2)
+                            helper(cluster: "dev", envVars: envVars, numInstances: 2)
                         }
                     }
                 }
