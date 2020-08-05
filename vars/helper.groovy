@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-def call(cluster, envVars, numInstances) {
+def call(Map params) {
 
-    echo cluster
-    echo envVars
-    echo numInstances
+    echo params.cluster
+    echo params.envVars
+    echo params.numInstances
 
 }
