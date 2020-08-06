@@ -21,7 +21,7 @@ def call(Map pipelineParams) {
                                     NEW_RELIC_ENVIRONMENT : "environment"
                             ]
                             def envVars = initialEnvVars + additionalEnvVars
-                            helper(cluster: "dev", numInstances: 2, envVars: envVars)
+                            helper("dev", 2, envVars)
                         }
                     }
                 }
